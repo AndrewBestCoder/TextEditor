@@ -17,12 +17,10 @@ using System.Windows.Shapes;
 
 namespace text_editor1
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
-        private string _currentPath;
+        public string _currentPath;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,35 +29,62 @@ namespace text_editor1
         private void OpenButtonClick(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true) { 
-                MainText.Text = File.ReadAllText(openFileDialog.FileName);
-                _currentPath = openFileDialog.FileName;
+            openFileDialog.Filter = "txt files (*.txt)|*.txt|rtf files (*.rtf)|*.rtf";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+
+                TextRange doc = new TextRange(MainText.Document.ContentStart, MainText.Document.ContentEnd);
+
+                using (FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open))
+                {
+                    if (System.IO.Path.GetExtension(openFileDialog.FileName).ToLower() == ".rtf")
+                    {
+                        doc.Load(fileStream, DataFormats.Rtf);
+                    }
+                    else if (System.IO.Path.GetExtension(openFileDialog.FileName).ToLower() == ".txt")
+                    {
+                        doc.Load(fileStream, DataFormats.Text);
+                    }
+                    else
+                    {
+                        doc.Load(fileStream, DataFormats.Xaml);
+                    }
+                }
+
             }
+          
         }
         private void SaveAsButtonClick(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            if (saveFileDialog.ShowDialog() == true)
-            {
-                File.Create(saveFileDialog.FileName);
-                File.WriteAllText(saveFileDialog.FileName, MainText.Text);
-                _currentPath = saveFileDialog.FileName;
-            }
-                
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt|rtf files (*.rtf)|*.rtf";
 
-            
+            if(saveFileDialog.ShowDialog() == true)
+            {
+                TextRange doc = new TextRange(MainText.Document.ContentStart, MainText.Document.ContentEnd);
+                using (FileStream fileStream = File.Create(saveFileDialog.FileName))
+                {
+                    if (System.IO.Path.GetExtension(saveFileDialog.FileName).ToLower() == ".rtf")
+                    {
+                        doc.Save(fileStream, DataFormats.Rtf);
+                    }
+                    else if (System.IO.Path.GetExtension(saveFileDialog.FileName).ToLower() == ".txt")
+                    {
+                        doc.Save(fileStream, DataFormats.Text);
+                    }
+                    else
+                    {
+                        doc.Save(fileStream, DataFormats.Xaml);
+                    }
+                }
+
+            }
         }
 
         private void SaveButtonClick(object sender, RoutedEventArgs e)
         {
-            if(File.Exists(_currentPath))
-            {
-                File.WriteAllText(_currentPath, MainText.Text);
-            }
-            else
-            {
-                SaveAsButtonClick(sender, new RoutedEventArgs());
-            }
+            //Paht
         }
     }
 }
