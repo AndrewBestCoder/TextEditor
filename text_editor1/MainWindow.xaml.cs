@@ -17,13 +17,15 @@ using System.Windows.Shapes;
 
 namespace text_editor1
 {
-
+   
     public partial class MainWindow : Window
     {
         public string _currentPath;
+        static RichTextBox richTextBox;
         public MainWindow()
         {
             InitializeComponent();
+            richTextBox = new RichTextBox();
         }
 
         private void OpenButtonClick(object sender, RoutedEventArgs e)
@@ -82,9 +84,10 @@ namespace text_editor1
             }
         }
 
-        private void SaveButtonClick(object sender, RoutedEventArgs e)
+        private void FindButtonClick(object sender, RoutedEventArgs e)
         {
-            //Paht
+            SearchAndReplaceWindow replaceWindow = new SearchAndReplaceWindow();
+            replaceWindow.ShowDialog();
         }
     }
 }
