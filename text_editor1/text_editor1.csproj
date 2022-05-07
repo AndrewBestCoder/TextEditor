@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FindSubstring.cs" />
     <Compile Include="SearchAndReplaceWindow.xaml.cs">
       <DependentUpon>SearchAndReplaceWindow.xaml</DependentUpon>
     </Compile>
@@ -116,6 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icons8-поиск-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-направо-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-налево-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,12 +20,12 @@ namespace text_editor1
   
     public partial class MainWindow : Window
     {
-        
-        public string _currentPath;
-        static RichTextBox richTextBox;
+
+        private FindSubstring _substringFinder;
         public MainWindow()
         {
             InitializeComponent();
+            _substringFinder = new FindSubstring();
         }
 
         private void OpenButtonClick(object sender, RoutedEventArgs e)
@@ -83,39 +83,20 @@ namespace text_editor1
         }
 
 
-        private void FindButtonClick(object sender, RoutedEventArgs e)
+/*        private void FindButtonClick(object sender, RoutedEventArgs e)
         {
-            if(FindText.Text != "")
-            { 
-            string word = FindText.Text;
-            List<TextRange> ranges = new List<TextRange>();
-
-            TextRange text = new TextRange(MainText.Document.ContentStart, MainText.Document.ContentEnd);
-            TextPointer current = text.Start.GetInsertionPosition(LogicalDirection.Forward);
-            while (true)
-            {
-                string textOnRun = current.GetTextInRun(LogicalDirection.Forward);
-                
-
-                int index = textOnRun.IndexOf(word);
-                if (index >= 0)
-                {
-                    TextPointer first = current.GetPositionAtOffset(index, LogicalDirection.Forward);
-                    TextPointer last = current.GetPositionAtOffset(word.Length + 1, LogicalDirection.Forward);
-                    ranges.Add(new TextRange(first, last));
-                    current = last;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            for (int i = 0; i < ranges.Count; i++)
-            {
-                MainText.Selection.Select(ranges[i].Start, ranges[i].End);
-                MainText.Focus();
-            }
-            }
+            _substringFinder.Find(MainText, FindText.Text);
+            
         }
+
+        private void RigthtStepButtonClick(object sender, RoutedEventArgs e)
+        {
+            _substringFinder.ShowNext(MainText);
+        }
+
+        private void LeftStepButtonClick(object sender, RoutedEventArgs e)
+        {
+            _substringFinder.ShowPrev(MainText);
+        }*/
     }
 }

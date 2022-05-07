@@ -42,6 +42,12 @@
             <Button Height="25" Width="25" Click="FindButtonClick">
                 <Image Source="Images/icons8-поиск-100.png"></Image>
             </Button>
+            <Button Height="25" Width="25" Click="LeftStepButtonClick">
+                <Image Source="Images/icons8-налево-100.png"></Image>
+            </Button>
+            <Button Height="25" Width="25" Click="RigthtStepButtonClick">
+                <Image Source="Images/icons8-направо-100.png"></Image>
+            </Button>
             <Separator/>
         </ToolBar>
         <RichTextBox Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2"/>
