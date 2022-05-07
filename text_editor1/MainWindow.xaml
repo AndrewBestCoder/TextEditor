@@ -9,6 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" Height="25" VerticalAlignment="Top">
@@ -20,10 +21,29 @@
             </MenuItem>
             <MenuItem Header="Edit" ></MenuItem>
             <MenuItem Header="View" ></MenuItem>
-            <MenuItem Header="Find" Click="FindButtonClick" >
+            <MenuItem Header="Find">
                 <MenuItem Header="Search"></MenuItem>
             </MenuItem>
         </Menu>
-        <RichTextBox Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="1"/>
+        <ToolBar HorizontalAlignment="Left" Grid.Row="1">
+            <Separator />
+            <Button Height="25" Width="25">
+                <Image Source="Images\icons8-жирный-50.png"></Image>
+            </Button>
+            <Separator />
+            <Button Height="25" Width="25">
+                <Image Source="Images\icons8-курсив-24.png"></Image>
+            </Button>
+            <Separator />
+            <Button Height="25" Width="25">
+                <Image Source="Images\icons8-цвет-текста-64.png"></Image>
+            </Button>
+            <TextBox Name="FindText" Width="100" Background="#FFB5C1C1" Text=""></TextBox>
+            <Button Height="25" Width="25" Click="FindButtonClick">
+                <Image Source="Images/icons8-поиск-100.png"></Image>
+            </Button>
+            <Separator/>
+        </ToolBar>
+        <RichTextBox Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2"/>
     </Grid>
 </Window>

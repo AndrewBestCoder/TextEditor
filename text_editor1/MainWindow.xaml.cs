@@ -17,15 +17,15 @@ using System.Windows.Shapes;
 
 namespace text_editor1
 {
-   
+  
     public partial class MainWindow : Window
     {
+        
         public string _currentPath;
         static RichTextBox richTextBox;
         public MainWindow()
         {
             InitializeComponent();
-            richTextBox = new RichTextBox();
         }
 
         private void OpenButtonClick(object sender, RoutedEventArgs e)
@@ -82,10 +82,40 @@ namespace text_editor1
             }
         }
 
+
         private void FindButtonClick(object sender, RoutedEventArgs e)
         {
-            SearchAndReplaceWindow replaceWindow = new SearchAndReplaceWindow();
-            replaceWindow.ShowDialog();
+            if(FindText.Text != "")
+            { 
+            string word = FindText.Text;
+            List<TextRange> ranges = new List<TextRange>();
+
+            TextRange text = new TextRange(MainText.Document.ContentStart, MainText.Document.ContentEnd);
+            TextPointer current = text.Start.GetInsertionPosition(LogicalDirection.Forward);
+            while (true)
+            {
+                string textOnRun = current.GetTextInRun(LogicalDirection.Forward);
+                
+
+                int index = textOnRun.IndexOf(word);
+                if (index >= 0)
+                {
+                    TextPointer first = current.GetPositionAtOffset(index, LogicalDirection.Forward);
+                    TextPointer last = current.GetPositionAtOffset(word.Length + 1, LogicalDirection.Forward);
+                    ranges.Add(new TextRange(first, last));
+                    current = last;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = 0; i < ranges.Count; i++)
+            {
+                MainText.Selection.Select(ranges[i].Start, ranges[i].End);
+                MainText.Focus();
+            }
+            }
         }
     }
 }
