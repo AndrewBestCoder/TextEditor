@@ -24,6 +24,6 @@
                 <MenuItem Header="Search"></MenuItem>
             </MenuItem>
         </Menu>
-        <RichTextBox Name="MainText" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="1"/>
+        <RichTextBox Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="1"/>
     </Grid>
 </Window>

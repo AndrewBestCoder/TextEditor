@@ -52,10 +52,8 @@ namespace text_editor1
                     {
                         doc.Load(fileStream, DataFormats.Xaml);
                     }
-                }
-
+                }           
             }
-          
         }
         private void SaveAsButtonClick(object sender, RoutedEventArgs e)
         {
