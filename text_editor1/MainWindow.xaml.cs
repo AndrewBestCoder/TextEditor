@@ -98,5 +98,9 @@ namespace text_editor1
         {
             _substringFinder.ShowPrev(MainText);
         }
+        private void ReplaceAllButtonClick(object sender, RoutedEventArgs e)
+        {
+            _substringFinder.ReplaceAll(MainText, FindText.Text, ReplaceText.Text);
+        }
     }
 }

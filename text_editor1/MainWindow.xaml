@@ -7,12 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="129*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0" Height="25" VerticalAlignment="Top">
+        <Menu Grid.Row="0" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <MenuItem Header="File">
                 <MenuItem Header="Open File" Click="OpenButtonClick" ></MenuItem>
                 <MenuItem Header="Save File" Click="SaveAsButtonClick"></MenuItem>
@@ -25,7 +29,7 @@
                 <MenuItem Header="Search"></MenuItem>
             </MenuItem>
         </Menu>
-        <ToolBar HorizontalAlignment="Left" Grid.Row="1">
+        <ToolBar HorizontalAlignment="Left" Grid.Row="1" Grid.ColumnSpan="2">
             <Separator />
             <Button Height="25" Width="25">
                 <Image Source="Images\icons8-жирный-50.png"></Image>
@@ -38,10 +42,12 @@
             <Button Height="25" Width="25">
                 <Image Source="Images\icons8-цвет-текста-64.png"></Image>
             </Button>
+            <Separator/>
             <TextBox Name="FindText" Width="100" Background="#FFB5C1C1" Text=""></TextBox>
             <Button Height="25" Width="25" Click="FindButtonClick">
                 <Image Source="Images/icons8-поиск-100.png"></Image>
             </Button>
+            <Separator/>
             <Button Height="25" Width="25" Click="LeftStepButtonClick">
                 <Image Source="Images/icons8-налево-100.png"></Image>
             </Button>
@@ -49,7 +55,13 @@
                 <Image Source="Images/icons8-направо-100.png"></Image>
             </Button>
             <Separator/>
+            <TextBox Name="ReplaceText" Width="100" Background="#FFB5C1C1"></TextBox>
+
+            <Button Height="25" Width="25" Click="ReplaceAllButtonClick">
+                <Image Source="Images/icons8-заменить-100.png"></Image>
+            </Button>
+            <Separator/>
         </ToolBar>
-        <RichTextBox Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2"/>
+        <RichTextBox Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

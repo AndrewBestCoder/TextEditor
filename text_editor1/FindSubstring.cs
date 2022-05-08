@@ -77,6 +77,15 @@ namespace text_editor1
                 richText.Focus();
             }
         }
+        public void ReplaceAll(RichTextBox richText, string substringOld, string substringNew)
+        {
+            Find(richText, substringOld);
+            foreach(var value in _wordsRanges)
+            {
+                value.Text = substringNew;
+            }
+            
+        }
         
     }
 }
