@@ -83,7 +83,7 @@ namespace text_editor1
         }
 
 
-/*        private void FindButtonClick(object sender, RoutedEventArgs e)
+        private void FindButtonClick(object sender, RoutedEventArgs e)
         {
             _substringFinder.Find(MainText, FindText.Text);
             
@@ -97,6 +97,6 @@ namespace text_editor1
         private void LeftStepButtonClick(object sender, RoutedEventArgs e)
         {
             _substringFinder.ShowPrev(MainText);
-        }*/
+        }
     }
 }

@@ -22,30 +22,41 @@ namespace text_editor1
             _wordsRanges.Clear();
             if (substring != "")
             {
-
+                int memoryIndex = 0;
                 string word = substring;
 
                 TextRange text = new TextRange(richText.Document.ContentStart, richText.Document.ContentEnd);
+
                 TextPointer current = text.Start.GetInsertionPosition(LogicalDirection.Forward);
-                while (true)
+                TextPointer FullTextCurrent = current; 
+                while (current != null)
                 {
                     string textOnRun = current.GetTextInRun(LogicalDirection.Forward);
 
 
                     int index = textOnRun.IndexOf(word);
+                    memoryIndex  += index + word.Length;
                     if (index >= 0)
                     {
-                        TextPointer first = current.GetPositionAtOffset(index, LogicalDirection.Forward);
-                        TextPointer last = current.GetPositionAtOffset(word.Length, LogicalDirection.Forward);
+                        TextPointer first = FullTextCurrent.GetPositionAtOffset(memoryIndex - word.Length, LogicalDirection.Backward);
+                        TextPointer last = FullTextCurrent.GetPositionAtOffset(memoryIndex, LogicalDirection.Forward);
                         _wordsRanges.Add(new TextRange(first, last));
-
                     }
                     else
                     {
                         break;
                     }
-                   
+                    current = current.GetPositionAtOffset(index + word.Length);
                 }
+            }
+            if (_wordsRanges.Count > 0)
+            {
+                richText.Selection.Select(_wordsRanges[0].Start, _wordsRanges[0].End);
+                richText.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Совпадений не найдено");
             }
         }
         public void ShowNext(RichTextBox richText)
@@ -54,6 +65,7 @@ namespace text_editor1
             {
                 _iterator += 1;
                 richText.Selection.Select(_wordsRanges[_iterator].Start, _wordsRanges[_iterator].End);
+                richText.Focus();
             }
         }
         public void ShowPrev(RichTextBox richText)
@@ -62,6 +74,7 @@ namespace text_editor1
             {
                 _iterator -= 1;
                 richText.Selection.Select(_wordsRanges[_iterator].Start, _wordsRanges[_iterator].End);
+                richText.Focus();
             }
         }
         
