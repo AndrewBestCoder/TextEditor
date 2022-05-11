@@ -51,7 +51,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Background="#dfe4ea">
         <Button Content="Find" HorizontalAlignment="Left" Height="25" Margin="26,88,0,0" VerticalAlignment="Top" Width="90"
                 Background="#55efc4"
                 Foreground="White"
@@ -66,6 +66,7 @@
         <TextBox HorizontalAlignment="Center" Height="21" Margin="0,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
+                 BorderBrush="{x:Null}"
                  />
         <Button  Content="Replace" HorizontalAlignment="Left" Height="25" Margin="188,88,0,0" VerticalAlignment="Top" Width="90"
             Background="#55efc4"

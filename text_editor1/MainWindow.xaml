@@ -38,25 +38,7 @@
             <Button>
                 <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images\icons8-цвет-текста-64.png"></Image>
             </Button>
-            <Separator/>
-            <TextBox Name="FindText" Width="100" Background="#FFB5C1C1" Text=""></TextBox>
-            <Button Click="FindButtonClick">
-                <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images/icons8-поиск-100.png"></Image>
-            </Button>
-            <Separator/>
-            <Button Click="LeftStepButtonClick">
-                <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images/icons8-налево-100.png"></Image>
-            </Button>
-            <Button Click="RigthtStepButtonClick">
-                <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images/icons8-направо-100.png"></Image>
-            </Button>
-            <Separator/>
-            <TextBox Name="ReplaceText" Width="100" Background="#FFB5C1C1"></TextBox>
 
-            <Button Click="ReplaceAllButtonClick">
-                <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images/icons8-заменить-100.png"></Image>
-            </Button>
-            <Separator/>
         </ToolBar>
         <RichTextBox BorderBrush="{x:Null}" Background="White" Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2" Margin="10,10,10,10" Grid.RowSpan="2" Cursor="Arrow"/>
     </Grid>
