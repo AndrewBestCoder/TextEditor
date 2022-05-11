@@ -94,5 +94,10 @@ namespace text_editor1
             ReferenceWindow rw = new ReferenceWindow();
             rw.ShowDialog();
         }
+
+        private void Close_button(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:text_editor1"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None"
         Title="MainWindow" Height="600" Width="1000">
     <Grid Background="#dfe4ea">
         <Grid.RowDefinitions>
@@ -25,6 +26,7 @@
             <MenuItem Header="Find" Height="40" Click="Find"/>
 
         </Menu>
+        <Button Background="Red" Content="X" Width="40" Height="40" HorizontalAlignment="Right" Click="Close_button"></Button>
         <ToolBar Background="White" Grid.Row="1" Grid.Column="0" Margin="-5,0,0,0">
             <Separator />
             <Button >
