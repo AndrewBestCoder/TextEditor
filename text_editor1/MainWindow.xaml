@@ -21,11 +21,11 @@
                 <MenuItem Header="Exit" ></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit" Height="40" ></MenuItem>
-            <MenuItem Header="View" Height="40" ></MenuItem>
+            <MenuItem Header="Reference" Height="40" Click="Reference_button"></MenuItem>
             <MenuItem Header="Find" Height="40" Click="Find"/>
 
         </Menu>
-        <ToolBar Background="White" HorizontalAlignment="Left" Grid.Row="1" Margin="-5,0,0,0" Width="5000">
+        <ToolBar Background="White" Grid.Row="1" Grid.Column="0" Margin="-5,0,0,0">
             <Separator />
             <Button >
                 <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images\icons8-жирный-50.png"></Image>
@@ -38,7 +38,26 @@
             <Button>
                 <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images\icons8-цвет-текста-64.png"></Image>
             </Button>
+            <Separator />
+            <ComboBox Name="SizeText" VerticalAlignment="Center" FontSize="18">
+                <TextBlock>8</TextBlock>
+                <TextBlock>9</TextBlock>
+                <ComboBoxItem IsSelected="True">
+                    <TextBlock>10</TextBlock>
+                </ComboBoxItem>
+                <TextBlock>11</TextBlock>
+                <TextBlock>12</TextBlock>
+                <TextBlock>14</TextBlock>
+                <TextBlock>16</TextBlock>
+                <TextBlock>18</TextBlock>
+                <TextBlock>20</TextBlock>
+            </ComboBox>
+            <ComboBox Name="Font" VerticalAlignment="Center" FontSize="18">
+                <ComboBoxItem FontFamily="Calibri" IsSelected="True">Calibri (основной)</ComboBoxItem>
+                <TextBlock FontFamily="Arial">Arial</TextBlock>
+                <TextBlock FontFamily="Times New Roman">Times New Roman</TextBlock>
 
+            </ComboBox>
         </ToolBar>
         <RichTextBox BorderBrush="{x:Null}" Background="White" Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2" Margin="10,10,10,10" Grid.RowSpan="2" Cursor="Arrow"/>
     </Grid>

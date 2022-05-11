@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Search And Replace Window" Height="170" Width="300">
+        WindowStartupLocation="CenterScreen"
+    Title="Search And Replace Window" Height="170" Width="300">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -51,23 +52,19 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Background="#dfe4ea">
+    <Grid Background="#DFE4EA">
         <Button Content="Find" HorizontalAlignment="Left" Height="25" Margin="26,88,0,0" VerticalAlignment="Top" Width="90"
                 Background="#55efc4"
                 Foreground="White"
                 FontFamily="Arial"
-                FontSize="16">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+                FontSize="16"/>
+
         <TextBox HorizontalAlignment="Center" Height="21" Margin="0,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
                  BorderBrush="{x:Null}"
                  />
+        
         <Button  Content="Replace" HorizontalAlignment="Left" Height="25" Margin="188,88,0,0" VerticalAlignment="Top" Width="90"
             Background="#55efc4"
             Foreground="White"
