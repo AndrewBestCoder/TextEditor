@@ -34,38 +34,28 @@
         <Button Background="Red" Content="X" Width="40" Height="40" HorizontalAlignment="Right" Click="Close_button"></Button>
         <ToolBar Background="White" Grid.Row="1" Grid.Column="0" Margin="-5,0,0,0">
             <Separator />
-            <Button>
-                <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images\icons8-жирный-50.png"></Image>
-            </Button>
+            <ToggleButton Name="btnBold" Command="EditingCommands.ToggleBold">
+                <Image Width="20" Height="22" Source="Images\icons8-жирный-50.png"/>
+            </ToggleButton>
             <Separator />
-            <Button>
-                <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images\icons8-курсив-24.png"></Image>
-            </Button>
+            <ToggleButton Name="btnItalic" Command="EditingCommands.ToggleItalic">
+                <Image Width="20" Height="22" Source="Images\icons8-курсив-24.png"/>
+            </ToggleButton>
             <Separator />
-            <Button>
-                <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images\icons8-цвет-текста-64.png"></Image>
-            </Button>
+            <ToggleButton Name="btnUnderline" Command="EditingCommands.ToggleUnderline">
+                <Image Width="20" Height="22" Source="Images\icons8-цвет-текста-64.png"/>
+            </ToggleButton>
             <Separator />
-            <ComboBox Name="SizeText" VerticalAlignment="Center" FontSize="18">
-                <TextBlock>8</TextBlock>
-                <TextBlock>9</TextBlock>
-                <ComboBoxItem IsSelected="True">
-                    <TextBlock>10</TextBlock>
-                </ComboBoxItem>
-                <TextBlock>11</TextBlock>
-                <TextBlock>12</TextBlock>
-                <TextBlock>14</TextBlock>
-                <TextBlock>16</TextBlock>
-                <TextBlock>18</TextBlock>
-                <TextBlock>20</TextBlock>
-            </ComboBox>
-            <ComboBox Name="Font" VerticalAlignment="Center" FontSize="18">
-                <ComboBoxItem FontFamily="Calibri" IsSelected="True">Calibri (основной)</ComboBoxItem>
-                <TextBlock FontFamily="Arial">Arial</TextBlock>
-                <TextBlock FontFamily="Times New Roman">Times New Roman</TextBlock>
+            <ComboBox IsEditable="True" Name="cmbFontSize" Width="50" TextBoxBase.TextChanged="cmbFontSize_TextChanged" VerticalAlignment="Center" FontSize="18"/>
 
-            </ComboBox>
+            <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"  VerticalAlignment="Center" FontSize="18"/>
         </ToolBar>
-        <RichTextBox BorderBrush="{x:Null}" Background="White" Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2" Margin="10,10,10,10" Grid.RowSpan="2" Cursor="Arrow"/>
+        <RichTextBox AllowDrop="True" BorderBrush="{x:Null}" Background="White" Name="MainText" SpellCheck.IsEnabled="True" Language="ru-ru" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Row="2" Margin="10,10,10,10" Grid.RowSpan="2" Cursor="Arrow" SelectionChanged="rtbEditor_SelectionChanged" DragOver="RichTextBox_DragOver" Drop="RichTextBox_Drop">
+            <RichTextBox.CommandBindings>
+                <CommandBinding Command="EditingCommands.ToggleBold"></CommandBinding>
+                <CommandBinding Command="EditingCommands.ToggleItalic"></CommandBinding>
+                <CommandBinding Command="EditingCommands.ToggleUnderline"></CommandBinding>
+            </RichTextBox.CommandBindings>
+        </RichTextBox>
     </Grid>
 </Window>
