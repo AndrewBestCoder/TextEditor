@@ -20,8 +20,6 @@ namespace text_editor1
   
     public partial class MainWindow : Window
     {
-        public static SearchAndReplaceWindow find_word;
-        public static ReferenceWindow reference;
         private FindSubstring _substringFinder;
         public MainWindow()
         {
@@ -84,22 +82,17 @@ namespace text_editor1
         }
         private void Find(object sender, RoutedEventArgs e)
         {
-            if (find_word == null)
-            {
-                find_word = new SearchAndReplaceWindow();
-                find_word.Show();
-            }
-            else find_word.Activate();
+            SearchAndReplaceWindow sarw = new SearchAndReplaceWindow();
+            sarw.ShowDialog();
+
+
+
         }
 
         private void Reference_button(object sender, RoutedEventArgs e)
         {
-            if (reference == null)
-            {
-                reference = new ReferenceWindow();
-                reference.Show();
-            }
-            else reference.Activate();
+            ReferenceWindow rw = new ReferenceWindow();
+            rw.ShowDialog();
         }
     }
 }
