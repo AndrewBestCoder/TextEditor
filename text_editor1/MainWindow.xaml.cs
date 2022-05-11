@@ -101,5 +101,10 @@ namespace text_editor1
             }
             else reference.Activate();
         }
+
+        private void Close_button(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
