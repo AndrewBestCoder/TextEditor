@@ -20,7 +20,7 @@ namespace text_editor1
   
     public partial class MainWindow : Window
     {
-
+        public static SearchAndReplaceWindow find_word;
         private FindSubstring _substringFinder;
         public MainWindow()
         {
@@ -101,6 +101,16 @@ namespace text_editor1
         private void ReplaceAllButtonClick(object sender, RoutedEventArgs e)
         {
             _substringFinder.ReplaceAll(MainText, FindText.Text, ReplaceText.Text);
+        }
+
+        private void Find(object sender, RoutedEventArgs e)
+        {
+            if (find_word == null)
+            {
+                find_word = new SearchAndReplaceWindow();
+                find_word.Show();
+            }
+            else find_word.Activate();
         }
     }
 }
