@@ -21,7 +21,12 @@
                 <Separator />
                 <MenuItem Header="Exit" ></MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit" Height="40" ></MenuItem>
+            <MenuItem Header="Edit" Height="40" >
+                <MenuItem Header="Copy"></MenuItem>
+                <MenuItem Header="Cut"></MenuItem>
+                <MenuItem Header="Paste"></MenuItem>
+                <MenuItem Header="Delete"></MenuItem>
+            </MenuItem>
             <MenuItem Header="Reference" Height="40" Click="Reference_button"></MenuItem>
             <MenuItem Header="Find" Height="40" Click="Find"/>
 
@@ -29,7 +34,7 @@
         <Button Background="Red" Content="X" Width="40" Height="40" HorizontalAlignment="Right" Click="Close_button"></Button>
         <ToolBar Background="White" Grid.Row="1" Grid.Column="0" Margin="-5,0,0,0">
             <Separator />
-            <Button >
+            <Button>
                 <Image Margin="-5,-5,-5,-9" Width="20" Height="20" Source="Images\icons8-жирный-50.png"></Image>
             </Button>
             <Separator />

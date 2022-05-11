@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         Title="ReferenceWindow" Height="250" Width="250">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="77,10,77,192">О программе</TextBlock>
-        <TextBlock Margin="10,50,10,10">Текстовый Редактор, в котором можно <LineBreak/> изменять шрифт, искать слова или <LineBreak/> заменять их, сохранять файлы и <LineBreak/> открывать их</TextBlock>
+        <TextBlock FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Height="26">О программе</TextBlock>
+        <TextBlock FontFamily="Arial" Margin="10,60,10,10">Текстовый Редактор, в котором можно <LineBreak/> изменять шрифт, искать слова или <LineBreak/> заменять их, сохранять файлы и <LineBreak/> открывать их</TextBlock>
     </Grid>
 </Window>

@@ -6,25 +6,39 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-    Title="Search And Replace Window" Height="170" Width="300">
-    <Grid Background="#DFE4EA">
-        <Button Content="Find" HorizontalAlignment="Left" Height="25" Margin="26,88,0,0" VerticalAlignment="Top" Width="90"
+    Title="Search And Replace Window" Height="200" Width="350">
+    <Grid Background="#f5f5f5">
+        <Button Content="Find" HorizontalAlignment="Left" Height="25" Margin="27,88,0,0" VerticalAlignment="Top" Width="90"
                 Background="#55efc4"
                 Foreground="White"
                 FontFamily="Arial"
-                FontSize="16"/>
+                FontSize="16"
+                BorderBrush="{x:Null}"/>
 
-        <TextBox HorizontalAlignment="Center" Height="21" Margin="0,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"
-                 Background="#FFF6F6F6"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"
+                 Background="#DFE4EA"
                  Foreground="DarkGray"
                  BorderBrush="{x:Null}"
                  />
-        
-        <Button  Content="Replace" HorizontalAlignment="Left" Height="25" Margin="188,88,0,0" VerticalAlignment="Top" Width="90"
+
+        <Button  Content="Replace" HorizontalAlignment="Right" Height="25" Margin="0,88,27,0" VerticalAlignment="Top" Width="90"
             Background="#55efc4"
             Foreground="White"
             FontFamily="Arial"
-            FontSize="16"/>
+            FontSize="16"
+            BorderBrush="{x:Null}"/>
+        <TextBox HorizontalAlignment="Right" Height="23" Margin="0,38,27,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"
+            Background="#DFE4EA"
+            Foreground="DarkGray"
+            BorderBrush="{x:Null}"
+                 />
+        <Image HorizontalAlignment="Center" Height="23" Margin="0,38,0,0" VerticalAlignment="Top" Width="22" Source="/Images/icons8-заменить-100.png" />
+        <Button  Background="White" BorderBrush="{x:Null}" HorizontalAlignment="Left" Height="25" Margin="146,88,0,0" VerticalAlignment="Top" Width="24" Click="LeftFindButtonClick">
+            <Image Margin="-16,-5,-9,-5" Height="25" Width="25" Source="Images/icons8-налево-100.png" HorizontalAlignment="Left" />
+        </Button>
+        <Button Background="white" BorderBrush="{x:Null}" HorizontalAlignment="Left" Height="25" Margin="170,88,0,0" VerticalAlignment="Top" Width="26" Click="RightFindButtonClick">
+            <Image Margin="-16,-5,-9,-5" Height="25" Width="25" Source="/Images/icons8-направо-100.png" HorizontalAlignment="Left" Cursor="Hand" />
+        </Button>
 
     </Grid>
 </Window>

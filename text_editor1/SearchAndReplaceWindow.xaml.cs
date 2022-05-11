@@ -34,5 +34,15 @@ namespace text_editor1
         {
 
         }
+
+        private void LeftFindButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightFindButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
