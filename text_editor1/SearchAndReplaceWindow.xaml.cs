@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace text_editor1
 {
     /// <summary>
@@ -27,6 +28,11 @@ namespace text_editor1
         private void FindButtonClick(object sender, RoutedEventArgs e)
         {
           
+        }
+
+        private void Repalce(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
