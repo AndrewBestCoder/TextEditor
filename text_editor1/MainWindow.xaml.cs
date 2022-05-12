@@ -158,11 +158,6 @@ namespace text_editor1
                 }
             }
         }
-        private void Find(object sender, RoutedEventArgs e)
-        {
-            SearchAndReplaceWindow sarw = new SearchAndReplaceWindow();
-            sarw.ShowDialog();
-        }
 
         private void Reference_button(object sender, RoutedEventArgs e)
         {

@@ -18,7 +18,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="27,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"
                  Background="#DFE4EA"
                  Foreground="DarkGray"
-                 BorderBrush="{x:Null}"
+                 BorderBrush="{x:Null}" Cursor=""
                  />
 
         <Button  Content="Replace" HorizontalAlignment="Right" Height="25" Margin="0,88,27,0" VerticalAlignment="Top" Width="90"
